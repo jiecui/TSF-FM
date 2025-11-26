@@ -26,3 +26,7 @@ data/m3
 # models
 CH02/model
 CH04/lag-llama
+
+# vscode
+*.code-workspace
+*.code-profile
