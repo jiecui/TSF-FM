@@ -2,6 +2,7 @@
 
 # notebooks
 .ipynb_checkpoints
+*.ipynb
 
 # training
 CH02/lightning_logs
