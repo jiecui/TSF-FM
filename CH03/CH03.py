@@ -6,7 +6,7 @@
 #       extension: .py
 #       format_name: percent
 #       format_version: '1.3'
-#       jupytext_version: 1.19.1
+#       jupytext_version: 1.19.3
 #   kernelspec:
 #     display_name: tsf-fm
 #     language: python
@@ -26,7 +26,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from dotenv import load_dotenv
-from nixtla import NixtlaClient
+from nixtla.nixtla_client import NixtlaClient
 from statsmodels.tsa.arima.model import ARIMA
 from utilsforecast.losses import mae, smape
 from utilsforecast.evaluation import evaluate
