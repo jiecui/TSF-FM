@@ -6,7 +6,7 @@
 #       extension: .py
 #       format_name: percent
 #       format_version: '1.3'
-#       jupytext_version: 1.19.3
+#       jupytext_version: 1.19.1
 #   kernelspec:
 #     display_name: tsf-fm
 #     language: python
@@ -164,6 +164,7 @@ test_df = df[-12:]
 # ### Zero-shot forecasting
 
 # %%
+pretrained_model.freq = "ME"
 zero_shot_preds = pretrained_model.predict(input_df)
 zero_shot_preds.head()
 
@@ -215,6 +216,7 @@ nf = NeuralForecast(models=models, freq="M")
 nf.fit(df=input_df)
 
 # %%
+nf.freq = "ME"
 trained_preds = nf.predict()
 trained_preds.head()
 
@@ -326,6 +328,7 @@ d_test_df = daily_df[-12:]
 # %%
 pretrained_model = NeuralForecast.load(path="./model")
 
+pretrained_model.freq = "ME"
 d_zero_shot_preds = pretrained_model.predict(d_input_df)
 d_zero_shot_preds.head()
 
