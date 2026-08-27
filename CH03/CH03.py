@@ -21,34 +21,37 @@
 
 # %%
 import datetime
+import warnings
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-
+from cycler import cycler
 from dotenv import load_dotenv
 from nixtla.nixtla_client import NixtlaClient
 from statsmodels.tsa.arima.model import ARIMA
-from utilsforecast.losses import mae, smape
 from utilsforecast.evaluation import evaluate
+from utilsforecast.losses import mae, smape
 
-import warnings
-warnings.filterwarnings('ignore')
+warnings.filterwarnings("ignore")
 
 # %%
-plt.rcParams['font.size'] = 14 
-plt.rcParams['axes.labelsize'] = 14  
-plt.rcParams['axes.titlesize'] = 14
-plt.rcParams['xtick.labelsize'] = 14 
-plt.rcParams['ytick.labelsize'] = 14 
-plt.rcParams['legend.fontsize'] = 14
-plt.rcParams['lines.linewidth'] = 2
-plt.rcParams['axes.prop_cycle'] = plt.cycler(color=[
-    "#000072", # blue (for historical data)
-    "#80c21d", # green (for actual data)
-    "#924eae", # purple
-    "#ff0000", # red
-    "#ff9100", # orange
-])
+plt.rcParams["font.size"] = 14
+plt.rcParams["axes.labelsize"] = 14
+plt.rcParams["axes.titlesize"] = 14
+plt.rcParams["xtick.labelsize"] = 14
+plt.rcParams["ytick.labelsize"] = 14
+plt.rcParams["legend.fontsize"] = 14
+plt.rcParams["lines.linewidth"] = 2
+plt.rcParams["axes.prop_cycle"] = cycler(
+    color=[
+        "#000072",  # blue (for historical data)
+        "#80c21d",  # green (for actual data)
+        "#924eae",  # purple
+        "#ff0000",  # red
+        "#ff9100",  # orange
+    ]
+)
 
 # %% [markdown]
 # ## Figure 3.2 Different temporal patterns appear with different domains
